@@ -13,7 +13,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: AppNotificaColors.blackApp,
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 80, horizontal: 16),
         child: Column(
@@ -32,11 +32,14 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
               alignment: Alignment.center,
               child: Image.asset('lib/assets/images/createAccount_image.png'),
             ),
-            const Text(
-              'Crie sua conta aqui!',
-              style: TextStyle(
-                color: AppNotificaColors.whiteApp,
-                fontSize: 18,
+            Container(
+              padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 0),
+              child: const Text(
+                'Crie sua conta aqui!',
+                style: TextStyle(
+                  color: AppNotificaColors.whiteApp,
+                  fontSize: 18,
+                ),
               ),
             ),
             Form(
