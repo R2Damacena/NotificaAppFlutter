@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:notifica_app/assets/colors/colors.dart';
 
 class LoginPage extends StatefulWidget {
@@ -87,7 +88,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () => context.go('/createAccount'),
                       child: const Text('Clique aqui!',
                           style: TextStyle(
                             color: AppNotificaColors.greenApp,
