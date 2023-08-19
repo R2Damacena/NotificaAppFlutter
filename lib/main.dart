@@ -1,10 +1,18 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:notifica_app/assets/colors/colors.dart';
 import 'package:notifica_app/pages/createAccount_page.dart';
+import 'package:notifica_app/pages/home_page.dart';
 import 'package:notifica_app/pages/login_page.dart';
 
-void main() {
+import 'firebase_options.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
@@ -19,6 +27,12 @@ final GoRouter _router = GoRouter(routes: <RouteBase>[
     path: '/createAccount',
     builder: (BuildContext context, GoRouterState state) {
       return const CreateAccountPage();
+    },
+  ),
+  GoRoute(
+    path: '/home',
+    builder: (BuildContext context, GoRouterState state) {
+      return const HomePage();
     },
   ),
 ]);
